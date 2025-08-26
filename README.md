@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmad Instagram Clone
 
-## Getting Started
+A modern Instagram-like social media application built with Next.js and Supabase.
 
-First, run the development server:
+## 🚀 Technology Stack
+
+- **Frontend**: Next.js 15 with App Router, React 19, TypeScript
+- **Styling**: Tailwind CSS 4.0
+- **Backend**: Supabase (Database, Authentication, Storage)
+- **Icons**: Lucide React
+- **Form Validation**: React Hook Form + Zod
+- **UI Design**: Mobile-optimized Instagram-like layout
+
+## ✨ Features
+
+- 🔐 User Authentication (Sign up, Login, Password Reset)
+- 📸 Photo Upload and Sharing
+- 💬 Comments and Likes
+- 👤 User Profiles
+- 📱 Mobile-Responsive Design
+- 🔒 Row Level Security (RLS) with Supabase
+
+## 🛠️ Setup
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables in `.env.local`
+4. Configure Supabase database and storage
+5. Run development server: `npm run dev`
+
+## 📱 Instagram-like Features
+
+- Photo feed with infinite scroll
+- User profiles with post galleries
+- Real-time interactions (likes, comments)
+- Secure image storage and processing
+- Authentication-based content access
+
+## 🔧 Development
 
 ```bash
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🗄️ Database Schema
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application uses Supabase with the following key tables:
+- `profiles` - User profile information
+- `posts` - Photo posts with captions
+- `comments` - Post comments
+- `likes` - Post likes and reactions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Security
 
-## Learn More
+- Row Level Security (RLS) policies for data protection
+- Authenticated-only content access
+- Secure image upload with public storage bucket
+- User-owned content restrictions
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ using modern web technologies
