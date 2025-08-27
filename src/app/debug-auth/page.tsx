@@ -78,8 +78,8 @@ export default function DebugAuthPage() {
       // Test 4: Check RLS policies
       const { data: policies, error: policyError } = await supabase
         .rpc('get_policies_for_table', { table_name: 'posts' })
-        .then(() => ({ data: 'RPC not available', error: null }))
-        .catch(() => ({ data: null, error: 'Could not check policies' }))
+        .then(() => ({ data: 'RPC not available', error: null } as const))
+        .catch(() => ({ data: null, error: 'Could not check policies' } as const))
 
       results.push(`ℹ️ Policy check: ${policyError || 'Policies seem to be set up'}`);
 
