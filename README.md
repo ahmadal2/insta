@@ -67,3 +67,4 @@ The application uses Supabase with the following key tables:
 ---
 
 Built with ❤️ using modern web technologies# ahmad-insta
+# ahmad-insta
