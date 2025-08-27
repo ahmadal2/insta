@@ -76,15 +76,23 @@ export default function DebugAuthPage() {
       }
 
       // Test 4: Check RLS policies
-      const { data: policies, error: policyError } = await supabase
-        .rpc('get_policies_for_table', { table_name: 'posts' })
-        .then(() => ({ data: 'RPC not available', error: null } as const))
-        .catch(() => ({ data: null, error: 'Could not check policies' } as const))
-
-      results.push(`ℹ️ Policy check: ${policyError || 'Policies seem to be set up'}`);
+      try {
+        const { data: policies, error: policyError } = await supabase
+          .rpc('get_policies_for_table', { table_name: 'posts' })
+        
+        if (policyError) {
+          results.push(`❌ Policy check failed: ${policyError.message}`)
+        } else if (!policies) {
+          results.push(`ℹ️ Policy check: RPC not available`)
+        } else {
+          results.push(`✅ Policy check: Policies are set up correctly`)
+        }
+      } catch (error) {
+        results.push(`❌ Policy check error: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      }
 
     } catch (error) {
-      results.push(`❌ Unexpected error: ${error}`)
+      results.push(`❌ Unexpected error: ${error instanceof Error ? error.message : 'Unknown error'}`)
     }
 
     setTestResults(results)
