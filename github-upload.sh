@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================"
-echo "    INSTA GITHUB UPLOAD"
+echo "    AHMAD-INSTA GITHUB UPLOAD"
 echo "========================================"
 echo ""
 
@@ -12,7 +12,7 @@ echo "✓ Verzeichnis: $(pwd)"
 # Schritt 1: README.md erstellen
 echo ""
 echo "Schritt 1: README.md erstellen..."
-echo "# insta" >> README.md
+echo "# ahmad-insta" >> README.md
 echo "✓ README.md erstellt"
 
 # Schritt 2: Git Repository initialisieren
@@ -42,14 +42,15 @@ echo "✓ Branch ist main"
 # Schritt 6: Remote Origin hinzufügen/aktualisieren
 echo ""
 echo "Schritt 6: GitHub Repository verbinden..."
-git remote add origin https://github.com/ahmadal2/insta.git 2>/dev/null || git remote set-url origin https://github.com/ahmadal2/insta.git
+git remote rm origin 2>/dev/null
+git remote add origin https://github.com/Ahmad7-7/ahmad-insta.git
 echo "✓ Remote Origin konfiguriert"
 
 # Schritt 7: Zu GitHub pushen
 echo ""
 echo "Schritt 7: Upload zu GitHub..."
 echo "⚠️  WICHTIG: Repository muss auf GitHub existieren!"
-echo "Repository URL: https://github.com/ahmadal2/insta"
+echo "Repository URL: https://github.com/Ahmad7-7/ahmad-insta"
 echo ""
 
 if git push -u origin main; then
@@ -58,14 +59,14 @@ if git push -u origin main; then
     echo "✅ SUCCESS! Projekt hochgeladen!"
     echo "========================================"
     echo "Dein Projekt ist verfügbar unter:"
-    echo "https://github.com/ahmadal2/insta"
+    echo "https://github.com/Ahmad7-7/ahmad-insta"
 else
     echo ""
     echo "❌ Upload fehlgeschlagen!"
     echo "Mögliche Lösungen:"
     echo "1. Repository auf GitHub erstellen: https://github.com/new"
     echo "2. GitHub Authentifizierung prüfen"
-    echo "3. Personal echo "# insta" >> README.mdAccess Token verwenden"
+    echo "3. Personal Access Token verwenden"
 fi
 
 echo ""
